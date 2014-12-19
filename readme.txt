@@ -2,12 +2,12 @@
 Contributors: ffsantos92
 Tags: nofollow,checkbox,option,link relation,rel attribute,seo,rel
 Requires at least: 3.2
-Tested up to: 4.0.1
+Tested up to: 4.1
 Stable tag: 1.0.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adds a checkbox in the insert/edit link popup for including nofollow attribute.
+Adds a checkbox in the insert/edit link popup for including rel="nofollow".
 
 == Description ==
 This plugin adds a simple checkbox in the insert/edit link popup for including ***nofollow*** attribute.
@@ -34,7 +34,7 @@ Just check the ***rel="nofollow"*** option under the default ***open link in a n
 == Changelog ==
 
 = 1.0.2 =
-* Compatible with WordPress 4.0.1
+* Compatible with WordPress 4.0.1, 4.1
 
 = 1.0.1 =
 * Compatible with WordPress 3.9
