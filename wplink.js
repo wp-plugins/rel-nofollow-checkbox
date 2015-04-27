@@ -1,4 +1,4 @@
-/* rel-nofollow-checkbox v1.1.3 | GPLv2 License | by fabiosantos.me */
+/* rel-nofollow-checkbox v1.1.4 | GPLv2 License | by fabiosantos.me */
 /* global ajaxurl, tinymce, wpLinkL10n, setUserSetting, wpActiveEditor */
 var wpLink;
 
@@ -24,12 +24,8 @@ var wpLink;
             var fsRelHtml = '<div><label><span> </span><input type="checkbox" id="rel-nofollow-checkbox" /><strong> rel="nofollow"</strong></label></div>';
             $(fsRelHtml)
                 .insertAfter('#wp-link .link-target');
-            $('#wp-link-wrap')
-                .css('min-height', '310px');
-
-            var fsTitleHtml = '<div><label><span>Link Title</span><input id="fs-title" type="text"></label></div>';
-            $(fsTitleHtml)
-                .insertAfter('.wp-link-text-field');
+            $('.query-results')
+                .css('top', '230px');
 
             inputs.wrap = $('#wp-link-wrap');
             inputs.dialog = $('#wp-link');
@@ -42,7 +38,6 @@ var wpLink;
             inputs.url = $('#wp-link-url');
             inputs.nonce = $('#_ajax_linking_nonce');
             inputs.fsRelNofollow = $('#rel-nofollow-checkbox');
-            inputs.fsTitle = $('#fs-title');
             inputs.openInNewTab = $('#wp-link-target');
             inputs.search = $('#wp-link-search');
 
@@ -250,7 +245,6 @@ var wpLink;
                 inputs.url.val(editor.dom.getAttrib(linkNode, 'href'));
                 inputs.openInNewTab.prop('checked', '_blank' === editor.dom.getAttrib(linkNode, 'target'));
                 inputs.fsRelNofollow.prop('checked', 'nofollow' === editor.dom.getAttrib(linkNode, 'rel'));
-                inputs.fsTitle.val(editor.dom.getAttrib(linkNode, 'title'));
                 inputs.submit.val(wpLinkL10n.update);
             } else {
                 text = editor.selection.getContent({
@@ -297,7 +291,6 @@ var wpLink;
                 href: $.trim(inputs.url.val()),
                 target: inputs.openInNewTab.prop('checked') ? '_blank' : '',
                 rel: inputs.fsRelNofollow.prop('checked') ? 'nofollow' : '',
-                title: inputs.fsTitle.val(),
             };
         },
 
